@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Faster+One&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="trackassets/style.css?a=4" />
+    <meta name="google-signin-client_id" content="50481374525-15e1sfj7hb606703erthsb3tis8j1jtk.apps.googleusercontent.com">
+   
+    <script src="https://apis.google.com/js/platform.js" async defer></script>  
+
+    <script src="../javascript/category.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <link rel="shortcut icon" href="../Tutu.png" />
+    
+   
+    <title>Customized Pack page</title>
+  </head>
+  <body>
+     <!-- <a class="enroll-now">
+      Enroll Now
+    </a>  -->
+    <div id="proceed-modal" class="proceed-modal">
+      <!-- Modal content -->
+      <div class="proceed-modal-content">
+        You haven’t selected any course yet, Add your favourite courses to proceed
+        <button id="ok">ok</button>
+      </div>
+    </div>
+    <div class="proceed">
+      <div>
+        <span>4</span>
+        <p>courses</p>
+      </div>
+      <div>
+        <sup>₹</sup><span>1499</span>
+        <p>total</p>
+      </div>
+      <a href="">link to proceed</a>
+      <button id="proceed-btn">
+        proceed
+      </button>
+    </div>
+    
+      <header class="disFlex">
+        <img class="logo-main logo" src="trackassets/Tutedude.png" alt="logo" />
+        <nav class="disFlex gradText">
+          <a href="">explore programs</a>
+          <a href="">offers</a>
+          <!-- <a href="">refund advantage</a> -->
+          <a href="">about us</a>
+        </nav>
+        
+        <div class="buttons disFlex">
+          <!-- /*************************************name****************************/ -->
+          <div class="dropdown">
+            <div class="name" id="name-block" style="text-transform: capitalize"><?php echo $_SESSION['name']; ?></div>
+            <div class="dropdown-content name-dropdown">
+              <a href="profile.php" style="width: auto !important;">Profile</a>
+              <a onclick="signOut();" style="color: black;">Log out</a>
+            </div>
+          </div>
+                    <!-- /*************************************name****************************/ -->
+
+                    <div class="login-container">
+            <button class="login" id="logBtn">
+              <div class="gradText">login</div>
+            </button>
+          </div>
+          <div id="log" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <span class="close" id="log-close">&times;</span>
+              <form action="login.php" method="post">
+                <div class="container">
+                  <img class="logo" src="trackassets/Tutedude.png" alt="logo" />
+                  <a class="disFlex g-signin2" data-onsuccess="onSignIn" style="background-color: white; box-shadow: none;">
+                    <img
+                      class="google"
+                      src="trackassets/5847f9cbcef1014c0b5e48c8.png"
+                      alt=""
+                    />
+                    Google Sign In
+                  </a>
+                  <h3>OR</h3>
+
+                  <div class="border">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      class="modal-icon"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <style type="text/css">
+                        .modal-icon {
+                          stroke: url(#logMyGra) !important;
+                        }
+                      </style>
+                      <defs>
+                        <linearGradient id="logMyGra">
+                          <stop offset="5%" stop-color="#b671cf" />
+                          <stop offset="95%" stop-color="#3a30aa" />
+                        </linearGradient>
+                      </defs>
+                      <path
+                        d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z"
+                      />
+                    </svg>
+                    <input
+                      type="text"
+                      placeholder="Enter Email"
+                      name="email"
+                      required
+                    />
+                  </div>
+
+                  <div class="border">
+                    <svg
+                      class="modal-icon"
+                      width="24"
+                      height="24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <style type="text/css">
+                        .modal-icon {
+                          stroke: url(#logMyGrad);
+                        }
+                      </style>
+                      <defs>
+                        <linearGradient id="logMyGrad">
+                          <stop offset="5%" stop-color="#b671cf" />
+                          <stop offset="95%" stop-color="#3a30aa" />
+                        </linearGradient>
+                      </defs>
+                      <path
+                        d="M12.804 9c1.038-1.793 2.977-3 5.196-3 3.311 0 6 2.689 6 6s-2.689 6-6 6c-2.219 0-4.158-1.207-5.196-3h-3.804l-1.506-1.503-1.494 1.503-1.48-1.503-1.52 1.503-3-3.032 2.53-2.968h10.274zm7.696 1.5c.828 0 1.5.672 1.5 1.5s-.672 1.5-1.5 1.5-1.5-.672-1.5-1.5.672-1.5 1.5-1.5z"
+                      />
+                    </svg>
+                    <input
+                      type="password"
+                      placeholder="Password (min. 6 characters)"
+                      name="password"
+                      required
+                    />
+                  </div>
+                  <!-- <div class="checkandforgot">
+                    <div class="check disFlex">
+                      <label class="checkbox">
+                        <input type="checkbox" /><span class="checkmark"></span>
+                      </label>
+                      <span>Keep me Logged In</span>
+                    </div>
+                    <a href="">forgot Password?</a>
+                  </div> -->
+
+                  <button type="submit" class="signupbtn btn-fill">
+                    Login
+                  </button>
+                  <span class="orLogin"
+                    >New User?
+                    <strong onclick="orsign()">Register here</strong></span
+                  >
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <button class="btn-fill sign-up" id="signBtn">sign up</button>
+
+          <!-- /****************signup modal**************************/ -->
+          <div id="sign" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <span class="close" id="sign-close">&times;</span>
+              <form action="registration.php" method="post">
+                <div class="container">
+                  <img class="logo" src="trackassets/Tutedude.png" alt="logo" />
+                  <!-- <a class="disFlex">
+                    <img
+                      class="google"
+                      src="trackassets/5847f9cbcef1014c0b5e48c8.png"
+                      alt=""
+                    />
+                    Sign Up with Google
+                  </a>
+                  <h3>OR</h3> -->
+                  <div class="border">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="modal-ico"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <style type="text/css">
+                        .modal-ico {
+                          stroke: url(#sigMyGra);
+                        }
+                      </style>
+                      <defs>
+                        <linearGradient id="sigMyGra">
+                          <stop offset="5%" stop-color="#b671cf" />
+                          <stop offset="95%" stop-color="#3a30aa" />
+                        </linearGradient>
+                      </defs>
+                      <path
+                        d="M19 7.001c0 3.865-3.134 7-7 7s-7-3.135-7-7c0-3.867 3.134-7.001 7-7.001s7 3.134 7 7.001zm-1.598 7.18c-1.506 1.137-3.374 1.82-5.402 1.82-2.03 0-3.899-.685-5.407-1.822-4.072 1.793-6.593 7.376-6.593 9.821h24c0-2.423-2.6-8.006-6.598-9.819z"
+                      />
+                    </svg>
+                    <input
+                      type="text"
+                      placeholder="Full Name"
+                      name="name"
+                      required
+                    />
+                  </div>
+                  <div class="border">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      class="modal-ico"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <style type="text/css">
+                        .modal-ico {
+                          stroke: url(#sigMyGrad);
+                        }
+                      </style>
+                      <defs>
+                        <linearGradient id="sigMyGrad">
+                          <stop offset="5%" stop-color="#b671cf" />
+                          <stop offset="95%" stop-color="#3a30aa" />
+                        </linearGradient>
+                      </defs>
+                      <path
+                        d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z"
+                      />
+                    </svg>
+                    <input
+                      type="text"
+                      placeholder="Enter Email"
+                      name="email"
+                      required
+                    />
+                  </div>
+
+                  <div class="border">
+                    <svg
+                      class="modal-ico"
+                      width="24"
+                      height="24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <style type="text/css">
+                        .modal-ico {
+                          stroke: url(#sigMyGrad);
+                        }
+                      </style>
+                      <defs>
+                        <linearGradient id="sigMyGrad">
+                          <stop offset="5%" stop-color="#b671cf" />
+                          <stop offset="95%" stop-color="#3a30aa" />
+                        </linearGradient>
+                      </defs>
+                      <path
+                        d="M12.804 9c1.038-1.793 2.977-3 5.196-3 3.311 0 6 2.689 6 6s-2.689 6-6 6c-2.219 0-4.158-1.207-5.196-3h-3.804l-1.506-1.503-1.494 1.503-1.48-1.503-1.52 1.503-3-3.032 2.53-2.968h10.274zm7.696 1.5c.828 0 1.5.672 1.5 1.5s-.672 1.5-1.5 1.5-1.5-.672-1.5-1.5.672-1.5 1.5-1.5z"
+                      />
+                    </svg>
+                    <input
+                      type="password"
+                      placeholder="Password (min. 6 characters)"
+                      name="password"
+                      required
+                    />
+                  </div>
+
+                  <div class="border">
+                    <svg
+                      width="24"
+                      height="24"
+                      class="modal-ico"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <style type="text/css">
+                        .modal-ico {
+                          stroke: url(#sigMyGrad);
+                        }
+                      </style>
+                      <defs>
+                        <linearGradient id="sigMyGrad">
+                          <stop offset="5%" stop-color="#b671cf" />
+                          <stop offset="95%" stop-color="#3a30aa" />
+                        </linearGradient>
+                      </defs>
+                      <path
+                        d="M18 24h-12c-1.104 0-2-.896-2-2v-20c0-1.104.896-2 2-2h12c1.104 0 2 .896 2 2v20c0 1.104-.896 2-2 2zm1-5.083h-14v3.083c0 .552.449 1 1 1h12c.552 0 1-.448 1-1v-3.083zm-7 3c-.553 0-1-.448-1-1s.447-1 1-1c.552 0 .999.448.999 1s-.447 1-.999 1zm7-17h-14v13h14v-13zm-1-3.917h-12c-.551 0-1 .449-1 1v1.917h14v-1.917c0-.551-.448-1-1-1zm-4.5 1.917h-3c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h3c.276 0 .5.224.5.5s-.224.5-.5.5z"
+                      /></svg><input
+                      type="number"
+                      placeholder="Phone Number"
+                      name="number"
+                      required
+                    />
+                  </div>
+
+                  <button type="submit" class="signupbtn btn-fill">
+                    Register
+                  </button>
+                  <span class="orLogin"
+                    >Already have an Account?
+
+                    <strong onclick="orlog()">Login</strong></span
+                  >
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- *********************** -->
+          <div class="dropdown">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="menu dropbtn"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <style type="text/css">
+                .menu {
+                  stroke: var(--accent-color);
+                }
+              </style>
+              <defs>
+                <linearGradient id="MyGradient">
+                  <stop offset="5%" stop-color="#B771D0" />
+                  <stop offset="95%" stop-color="#8255C0" />
+                </linearGradient>
+              </defs>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="3"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+            <div class="dropdown-content">
+              <a href="">explore programs</a>
+              <a href="">offers</a>
+              <!-- <a href="">refund advantage</a> -->
+              <a href="">about us</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="customized-head">
+        Customized Pack
+      </div>
+
+      <section class="hero">
+        <div class="hero-left">
+          <h1>Make Pack of 4 or
+            More Courses</h1>
+            <p>More Courses = More Discount</p>
+        </div>
+        <div class="hero-right">
+          <div class="pack-det">
+            <h2>4 courses</h2>
+            <h3>₹ 1,499 only</h3>
+            <p>Select any 4 courses of your choice at just
+              ₹ 1,499</p>
+          </div>
+          <div class="pack-det">
+            <h2>4+ courses</h2>
+            <h3>extra 45% off</h3>
+            <p>Additional 45% off on  each course added after 4 in the pack, i.e, ₹ 1499 + 45% off on each course</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="validity-sec">
+        <h1 class="gradText">FeesBack Offer Validity</h1>
+        <div class="validity-container">
+          <div class="calc-cont">
+            <p>Check Duration for FeesBack Offer</p>
+          <div class="calculation">
+<div class="no-dropdown">
+            <button type="button" class="collapsible">4</button>
+            <div class="content" id="content">
+              <div class="no-btn active-content-btn">4</div>
+              <div class="no-btn">5</div>
+              <div class="no-btn">6</div>
+              <div class="no-btn">7</div>
+            </div>
+          </div>
+          <div class="multiply">x</div>
+<div class="three">3</div>
+<div class="equal">=</div>
+<div class="result">12</div>
+          </div>
+          </div>
+          
+          
+         <div class="feesback-info">
+          <svg xmlns="http://www.w3.org/2000/svg" width="2.6rem" height="2.6rem" viewBox="0 0 26 26" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 13C0 9.55219 1.36964 6.24558 3.80761 3.80761C6.24558 1.36964 9.55219 0 13 0C16.4478 0 19.7544 1.36964 22.1924 3.80761C24.6304 6.24558 26 9.55219 26 13C26 16.4478 24.6304 19.7544 22.1924 22.1924C19.7544 24.6304 16.4478 26 13 26C9.55219 26 6.24558 24.6304 3.80761 22.1924C1.36964 19.7544 0 16.4478 0 13H0ZM12.2581 18.564L19.7427 9.20747L18.3907 8.12587L12.0085 16.1009L7.488 12.3344L6.37867 13.6656L12.2581 18.5657V18.564Z" fill="url(#paint0_linear_1_2553)"/>
+            <defs>
+            <linearGradient id="paint0_linear_1_2553" x1="26" y1="13" x2="1.38713e-07" y2="13" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#800080"/>
+            <stop offset="1" stop-color="#FF864C"/>
+            </linearGradient>
+            </defs>
+            </svg>
+          <p> Complete all the courses in your pack within <strong>12 months</strong> and claim 100% FeesBack
+         </p></div>
+
+      </section>
+
+      <section class="feesback-ext">
+<div class="ref-cont">
+  <div class="ref-1"><div></div>Completed</div>
+  <div class="ref-2"><div></div>Not Completed</div>
+</div>
+      
+      <div class="avail">Avail partial FeesBack as well !!</div>
+      <div class="piechart">
+        <div class="black-text">
+          <h3>₹ 1,499</h3>
+          <p>Price you paid for any 4 course pack</p>
+      </div>
+      <div class="white-text">
+        <h3> ₹375 </h3>
+        <span> / COURSE</span>
+    </div>
+      </div>
+
+      <div class="access-info">
+        <svg xmlns="http://www.w3.org/2000/svg" width="2.6rem" height="2.6rem" viewBox="0 0 26 26" fill="none">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M0 13C0 9.55219 1.36964 6.24558 3.80761 3.80761C6.24558 1.36964 9.55219 0 13 0C16.4478 0 19.7544 1.36964 22.1924 3.80761C24.6304 6.24558 26 9.55219 26 13C26 16.4478 24.6304 19.7544 22.1924 22.1924C19.7544 24.6304 16.4478 26 13 26C9.55219 26 6.24558 24.6304 3.80761 22.1924C1.36964 19.7544 0 16.4478 0 13H0ZM12.2581 18.564L19.7427 9.20747L18.3907 8.12587L12.0085 16.1009L7.488 12.3344L6.37867 13.6656L12.2581 18.5657V18.564Z" fill="url(#paint0_linear_1_2553)"/>
+          <defs>
+          <linearGradient id="paint0_linear_1_2553" x1="26" y1="13" x2="1.38713e-07" y2="13" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#800080"/>
+          <stop offset="1" stop-color="#FF864C"/>
+          </linearGradient>
+          </defs>
+          </svg>
+        <p>
+        <strong>Lifetime access</strong> on each course in the pack even after FeesBack
+      </div>
+</section>
+      <section class="course-sec">
+        <h1 class="gradText">Select  your Courses</h1>
+        <div class="course-grid">
+          <div class="course disFlex">
+            Web Development with PHP / MySQL
+            <div class="disFlex">
+            <a href=""><button class="view">
+              <svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="2.1rem" viewBox="0 0 30 21" fill="none">
+              <path d="M15 0.5C8.33333 0.5 2.64 4.64667 0.333328 10.5C2.64 16.3533 8.33333 20.5 15 20.5C21.6667 20.5 27.36 16.3533 29.6667 10.5C27.36 4.64667 21.6667 0.5 15 0.5ZM15 17.1667C11.32 17.1667 8.33333 14.18 8.33333 10.5C8.33333 6.82 11.32 3.83333 15 3.83333C18.68 3.83333 21.6667 6.82 21.6667 10.5C21.6667 14.18 18.68 17.1667 15 17.1667ZM15 6.5C12.7867 6.5 11 8.28667 11 10.5C11 12.7133 12.7867 14.5 15 14.5C17.2133 14.5 19 12.7133 19 10.5C19 8.28667 17.2133 6.5 15 6.5Z" fill="currentColor"/>
+              </svg>
+              view
+            </button>
+          </a>
+              <button class="add-course">
+                <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="1.9rem" viewBox="0 0 20 19" fill="currentcolor" class="add">
+                  <path d="M19.3333 10.8333H11.3333V18.8333H8.66667V10.8333H0.666672V8.16666H8.66667V0.166656H11.3333V8.16666H19.3333V10.8333Z" fill="currentColor"/>
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="0.3rem" viewBox="0 0 20 3" fill="none" class="rem" style="display: none;margin-top:0.8rem;margin-bottom:0.8rem">
+                    <path d="M8.66671 2.83341L0.666708 2.83341V0.166748L8.66671 0.166748L11.3334 0.166748L19.3334 0.166748V2.83341L11.3334 2.83341L8.66671 2.83341Z" fill="currentColor"/>
+                    </svg>
+               <span>add</span> 
+              </button>
+          </div>
+          </div>
+          <div class="course disFlex">
+            App Development
+            <div class="disFlex">
+            <a href=""><button class="view">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="21" viewBox="0 0 30 21" fill="none">
+              <path d="M15 0.5C8.33333 0.5 2.64 4.64667 0.333328 10.5C2.64 16.3533 8.33333 20.5 15 20.5C21.6667 20.5 27.36 16.3533 29.6667 10.5C27.36 4.64667 21.6667 0.5 15 0.5ZM15 17.1667C11.32 17.1667 8.33333 14.18 8.33333 10.5C8.33333 6.82 11.32 3.83333 15 3.83333C18.68 3.83333 21.6667 6.82 21.6667 10.5C21.6667 14.18 18.68 17.1667 15 17.1667ZM15 6.5C12.7867 6.5 11 8.28667 11 10.5C11 12.7133 12.7867 14.5 15 14.5C17.2133 14.5 19 12.7133 19 10.5C19 8.28667 17.2133 6.5 15 6.5Z" fill="currentColor"/>
+              </svg>
+              view
+            </button>
+          </a>
+              <button class="add-course">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+                  <path d="M19.3333 10.8333H11.3333V18.8333H8.66667V10.8333H0.666672V8.16666H8.66667V0.166656H11.3333V8.16666H19.3333V10.8333Z" fill="#800080"/>
+                  </svg>
+                add
+              </button>
+          </div>
+          </div>
+          <div class="course disFlex">
+            Web Development with MERN Stack
+            <div class="disFlex">
+            <a href=""><button class="view">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="21" viewBox="0 0 30 21" fill="none">
+              <path d="M15 0.5C8.33333 0.5 2.64 4.64667 0.333328 10.5C2.64 16.3533 8.33333 20.5 15 20.5C21.6667 20.5 27.36 16.3533 29.6667 10.5C27.36 4.64667 21.6667 0.5 15 0.5ZM15 17.1667C11.32 17.1667 8.33333 14.18 8.33333 10.5C8.33333 6.82 11.32 3.83333 15 3.83333C18.68 3.83333 21.6667 6.82 21.6667 10.5C21.6667 14.18 18.68 17.1667 15 17.1667ZM15 6.5C12.7867 6.5 11 8.28667 11 10.5C11 12.7133 12.7867 14.5 15 14.5C17.2133 14.5 19 12.7133 19 10.5C19 8.28667 17.2133 6.5 15 6.5Z" fill="#800080"/>
+              </svg>
+              view
+            </button>
+          </a>
+              <button class="add-course">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+                  <path d="M19.3333 10.8333H11.3333V18.8333H8.66667V10.8333H0.666672V8.16666H8.66667V0.166656H11.3333V8.16666H19.3333V10.8333Z" fill="#800080"/>
+                  </svg>
+                add
+              </button>
+          </div>
+          </div>
+          
+          <div class="course disFlex">
+            C++
+            <div class="disFlex">
+            <a href=""><button class="view">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="21" viewBox="0 0 30 21" fill="none">
+              <path d="M15 0.5C8.33333 0.5 2.64 4.64667 0.333328 10.5C2.64 16.3533 8.33333 20.5 15 20.5C21.6667 20.5 27.36 16.3533 29.6667 10.5C27.36 4.64667 21.6667 0.5 15 0.5ZM15 17.1667C11.32 17.1667 8.33333 14.18 8.33333 10.5C8.33333 6.82 11.32 3.83333 15 3.83333C18.68 3.83333 21.6667 6.82 21.6667 10.5C21.6667 14.18 18.68 17.1667 15 17.1667ZM15 6.5C12.7867 6.5 11 8.28667 11 10.5C11 12.7133 12.7867 14.5 15 14.5C17.2133 14.5 19 12.7133 19 10.5C19 8.28667 17.2133 6.5 15 6.5Z" fill="#800080"/>
+              </svg>
+              view
+            </button>
+          </a>
+              <button class="add-course">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+                  <path d="M19.3333 10.8333H11.3333V18.8333H8.66667V10.8333H0.666672V8.16666H8.66667V0.166656H11.3333V8.16666H19.3333V10.8333Z" fill="#800080"/>
+                  </svg>
+                add
+              </button>
+          </div>
+          </div>
+          <div class="course disFlex">
+            Web
+            <div class="disFlex">
+            <a href=""><button class="view">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="21" viewBox="0 0 30 21" fill="none">
+              <path d="M15 0.5C8.33333 0.5 2.64 4.64667 0.333328 10.5C2.64 16.3533 8.33333 20.5 15 20.5C21.6667 20.5 27.36 16.3533 29.6667 10.5C27.36 4.64667 21.6667 0.5 15 0.5ZM15 17.1667C11.32 17.1667 8.33333 14.18 8.33333 10.5C8.33333 6.82 11.32 3.83333 15 3.83333C18.68 3.83333 21.6667 6.82 21.6667 10.5C21.6667 14.18 18.68 17.1667 15 17.1667ZM15 6.5C12.7867 6.5 11 8.28667 11 10.5C11 12.7133 12.7867 14.5 15 14.5C17.2133 14.5 19 12.7133 19 10.5C19 8.28667 17.2133 6.5 15 6.5Z" fill="#800080"/>
+              </svg>
+              view
+            </button>
+          </a>
+              <button class="add-course">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+                  <path d="M19.3333 10.8333H11.3333V18.8333H8.66667V10.8333H0.666672V8.16666H8.66667V0.166656H11.3333V8.16666H19.3333V10.8333Z" fill="#800080"/>
+                  </svg>
+                add
+              </button>
+          </div>
+          </div>
+          <div class="course disFlex">
+            MySQL
+            <div class="disFlex">
+            <a href=""><button class="view">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="21" viewBox="0 0 30 21" fill="none">
+              <path d="M15 0.5C8.33333 0.5 2.64 4.64667 0.333328 10.5C2.64 16.3533 8.33333 20.5 15 20.5C21.6667 20.5 27.36 16.3533 29.6667 10.5C27.36 4.64667 21.6667 0.5 15 0.5ZM15 17.1667C11.32 17.1667 8.33333 14.18 8.33333 10.5C8.33333 6.82 11.32 3.83333 15 3.83333C18.68 3.83333 21.6667 6.82 21.6667 10.5C21.6667 14.18 18.68 17.1667 15 17.1667ZM15 6.5C12.7867 6.5 11 8.28667 11 10.5C11 12.7133 12.7867 14.5 15 14.5C17.2133 14.5 19 12.7133 19 10.5C19 8.28667 17.2133 6.5 15 6.5Z" fill="#800080"/>
+              </svg>
+              view
+            </button>
+          </a>
+              <button class="add-course">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+                  <path d="M19.3333 10.8333H11.3333V18.8333H8.66667V10.8333H0.666672V8.16666H8.66667V0.166656H11.3333V8.16666H19.3333V10.8333Z" fill="#800080"/>
+                  </svg>
+                add
+              </button>
+          </div>
+          </div>
+          <div class="course disFlex">
+            WSQL
+            <div class="disFlex">
+            <a href=""><button class="view">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="21" viewBox="0 0 30 21" fill="none">
+              <path d="M15 0.5C8.33333 0.5 2.64 4.64667 0.333328 10.5C2.64 16.3533 8.33333 20.5 15 20.5C21.6667 20.5 27.36 16.3533 29.6667 10.5C27.36 4.64667 21.6667 0.5 15 0.5ZM15 17.1667C11.32 17.1667 8.33333 14.18 8.33333 10.5C8.33333 6.82 11.32 3.83333 15 3.83333C18.68 3.83333 21.6667 6.82 21.6667 10.5C21.6667 14.18 18.68 17.1667 15 17.1667ZM15 6.5C12.7867 6.5 11 8.28667 11 10.5C11 12.7133 12.7867 14.5 15 14.5C17.2133 14.5 19 12.7133 19 10.5C19 8.28667 17.2133 6.5 15 6.5Z" fill="#800080"/>
+              </svg>
+              view
+            </button>
+          </a>
+              <button class="add-course">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+                  <path d="M19.3333 10.8333H11.3333V18.8333H8.66667V10.8333H0.666672V8.16666H8.66667V0.166656H11.3333V8.16666H19.3333V10.8333Z" fill="#800080"/>
+                  </svg>
+                add
+              </button>
+          </div>
+          </div>
+          
+        </div>
+
+      </section>
+
+
+      <section class="other-courses-sec">
+        <h1 class="gradText">Checkout our All Access Pack</h1>
+
+          <div class="other-courses-card">
+            <div class="course-price">
+              <span class="big">23</span>
+              <p>All courses @ &#8377;4,499/-</p>              <div class="feesback-offer">FEESBACK OFFER valid for 1 year </div>
+
+            </div>
+              <div class="save">save ₹ 1,287/-</div>
+            
+            <a href=""><button class="btn-course">Know More</button></a>
+          </div>
+      </section>
+
+      <section class="query" id="havequery">
+        <h1 class="gradText">Have Any Query?</h1>
+        <div class="query-grid">
+          <div class="query-asked">
+            <div class="query-ques">
+            <p>Why should I opt for Tutedude?</p>
+            <button>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="white"
+                class="plus"
+              >
+              <path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white" class="minus"><path d="M0 10h24v4h-24z"/></svg>
+              </svg>
+            </button></div>
+            <div class="query-ans hidden">
+              Tutedude provides you the professional curated content by Indian instructors along with live doubt solving and personal one to one mentorship which you won't find anywhere else.
+            </div>
+          </div>
+          <div class="query-asked">
+            <div class="query-ques">
+            <p>What is the validity of the courses and when can I watch them?</p>
+            <button>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="white"
+                class="plus"
+              >
+              <path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white" class="minus">
+              <path d="M0 10h24v4h-24z"/></svg>
+              </svg>
+            </button></div>
+            <div class="query-ans hidden">
+            You will have lifetime access to the courses and can watch the lectures anytime you want. So it is totally flexible and provides you the comfort of learning anytime anywhere. Also as the technologies progress we keep on updating our courses so you get the access to them too.
+            </div>
+          </div>
+          <div class="query-asked">
+            <div class="query-ques">
+            <p>How will my doubts be solved and will there be one on one interaction?</p>
+            <button>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="white"
+                class="plus"
+              >
+              <path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white" class="minus">
+              <path d="M0 10h24v4h-24z"/></svg>
+              </svg>
+            </button></div>
+            <div class="query-ans hidden">
+            Your doubts will be solved on a live chat, as soon as you get a doubt just ping your mentor through the chat option and within 5-10 minutes you will be connected to him to solve your doubts.
+            </div>
+          </div>
+          <div class="query-asked">
+            <div class="query-ques">
+            <p>Why don't you provide live classes and why should I prefer recorded lectures?</p>
+            <button>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="white"
+                class="plus"
+              >
+              <path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white" class="minus">
+              <path d="M0 10h24v4h-24z"/></svg>
+              </svg>
+            </button>
+          </div>
+            <div class="query-ans hidden">
+            Tutedude doesn't believe in the idea of teaching 100 students in 1 class where the student sometimes feels hesitant to ask some doubts and where the other student feels that this student is wasting his time by asking silly doubts. Moreover in this busy world it becomes difficult to attend the classes on a specific schedule. So we combined the benefits and provide you interactive video lectures and live one on one doubt solving to learn at your own pace and comfort. 
+            </div>
+          </div>
+        </div>
+        <!-- <div class="search">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="search-ico"
+            fill="none"
+            viewBox="0 0 22 22"
+            stroke="currentColor"
+            width="2.5rem"
+          >
+            <style type="text/css">
+              .search-ico {
+                stroke: url(#MyGradient);
+              }
+            </style>
+            <defs>
+              <linearGradient id="MyGradient">
+                <stop offset="5%" stop-color="#b671cf" />
+                <stop offset="95%" stop-color="#3a30aa" />
+              </linearGradient>
+            </defs>
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="{3}"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+            />
+          </svg>
+          <input
+            type="text"
+            name="search"
+            placeholder="Type query here"
+          /><button>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              stroke="none"
+              fill="white"
+            >
+              <path
+                d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"
+              />
+            </svg>
+          </button>
+        </div> -->
+      </section>
+        <!-- ............................................................footer..................................................... -->
+        <footer>
+          <div>
+            <h2>Other Links</h2>
+            <ul>
+              <li><a href="Footer/Aboutus.html">About us</a></li>
+              <li><a href="Footer/contactus.php">Contact us</a></li>
+              <li><a href="Footer/privacy.html">Privacy Policy</a></li>
+              <li><a href="Footer/termsofuse.html">Terms of Use</a></li>
+              <li><a href="Footer/refund.html">Refund Policy</a></li>
+            </ul>
+          </div>
+    
+          <div>
+            <h2 class="social-links">Social Links</h2>
+            <ul class="icons">
+              <li>
+                <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="2.5rem" height="2.5rem" viewBox="0 0 20 20" fill="none">
+                  <path d="M20 10C20 4.48 15.52 0 10 0C4.48 0 0 4.48 0 10C0 14.84 3.44 18.87 8 19.8V13H6V10H8V7.5C8 5.57 9.57 4 11.5 4H14V7H12C11.45 7 11 7.45 11 8V10H14V13H11V19.95C16.05 19.45 20 15.19 20 10Z" fill="white"/>
+                  </svg></a> </li>
+              <li>
+                <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="2.5rem" height="2.5rem" viewBox="0 0 20 16" fill="none">
+                  <path d="M19.582 2.186C19.352 1.326 18.674 0.648 17.814 0.418C16.254 2.08616e-07 10 0 10 0C10 0 3.746 2.08616e-07 2.186 0.418C1.326 0.648 0.648 1.326 0.418 2.186C-2.98023e-08 3.746 0 8 0 8C0 8 -2.98023e-08 12.254 0.418 13.814C0.648 14.674 1.326 15.352 2.186 15.582C3.746 16 10 16 10 16C10 16 16.254 16 17.814 15.582C18.675 15.352 19.352 14.674 19.582 13.814C20 12.254 20 8 20 8C20 8 20 3.746 19.582 2.186ZM8 11.464V4.536L14 8L8 11.464Z" fill="white"/>
+                  </svg> </a>
+              </li>
+              <li>
+                <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="2.5rem" height="2.5rem" viewBox="0 0 20 18" fill="none">
+                  <path d="M5 0C2.239 0 0 2.239 0 5V13C0 15.761 2.239 18 5 18H13C15.761 18 18 15.761 18 13V5C18 2.239 15.761 0 13 0H5ZM15 2C15.552 2 16 2.448 16 3C16 3.552 15.552 4 15 4C14.448 4 14 3.552 14 3C14 2.448 14.448 2 15 2ZM9 4C11.761 4 14 6.239 14 9C14 11.761 11.761 14 9 14C6.239 14 4 11.761 4 9C4 6.239 6.239 4 9 4ZM9 6C8.20435 6 7.44129 6.31607 6.87868 6.87868C6.31607 7.44129 6 8.20435 6 9C6 9.79565 6.31607 10.5587 6.87868 11.1213C7.44129 11.6839 8.20435 12 9 12C9.79565 12 10.5587 11.6839 11.1213 11.1213C11.6839 10.5587 12 9.79565 12 9C12 8.20435 11.6839 7.44129 11.1213 6.87868C10.5587 6.31607 9.79565 6 9 6Z" fill="white"/>
+                  </svg></a>
+                 </li>
+              <li>
+                <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="2.5rem" height="2.5rem" viewBox="0 0 20 18" fill="none">
+                  <path d="M16 0H2C0.895 0 0 0.895 0 2V16C0 17.105 0.895 18 2 18H16C17.105 18 18 17.105 18 16V2C18 0.895 17.105 0 16 0ZM6 14H3.477V7H6V14ZM4.694 5.717C3.923 5.717 3.408 5.203 3.408 4.517C3.408 3.831 3.922 3.317 4.779 3.317C5.55 3.317 6.065 3.831 6.065 4.517C6.065 5.203 5.551 5.717 4.694 5.717ZM15 14H12.558V10.174C12.558 9.116 11.907 8.872 11.663 8.872C11.419 8.872 10.605 9.035 10.605 10.174C10.605 10.337 10.605 14 10.605 14H8.082V7H10.605V7.977C10.93 7.407 11.581 7 12.802 7C14.023 7 15 7.977 15 10.174V14Z" fill="white"/>
+                  </svg></a>
+                </li>
+            </ul>
+          </div>
+          <div>
+            <h2>Contact</h2>
+            <ul>
+              <li><a href="">support@tutedude.com</a></li>
+              <li><a href="">+91 7988800474</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Registered Office</h2>
+            <ul>
+              <li><p>1411/14 Indira Colony Hansi, Hisar, Haryana 125033, India</p></li>            </ul>
+          </div>
+        </footer>
+
+
+
+    <script src="trackassets/script.js" charset="utf-8"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+ 
+    
+  </body>
+</html>
