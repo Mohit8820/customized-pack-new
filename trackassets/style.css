@@ -952,7 +952,6 @@ sup {
 .course {
   width: 37rem;
   height: 10rem;
-  background: #ffffff;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.07);
   border-radius: 1rem;
   padding: 2rem;
@@ -962,7 +961,10 @@ sup {
   display: flex;
   text-align: left;
   color: #431943;
-  transition: all 0.4s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background: linear-gradient(to right, #29bf12 50%, rgb(255, 255, 255) 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
 }
 .course button {
   font-weight: 400;
@@ -980,7 +982,7 @@ sup {
 
 .added {
   color: #fff;
-  background: #29bf12;
+  background-position: left bottom;
 }
 .added button {
   color: #fff;
@@ -1184,6 +1186,7 @@ footer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   align-items: flex-start !important;
+  padding-bottom: 8rem;
 }
 footer h2 {
   margin-bottom: 1rem;
@@ -1316,7 +1319,7 @@ footer a {
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
     padding: 4rem;
-    padding-bottom: 7rem;
+    padding-bottom: 15rem;
   }
   footer h2 {
     font-weight: 500;
