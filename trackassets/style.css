@@ -708,6 +708,7 @@ sup {
   position: absolute;
   top: 0rem;
   left: 2rem;
+  z-index: 9;
   /* transform: translateY(-50%); */
 }
 
@@ -732,7 +733,7 @@ sup {
   content: ">";
   font-family: "Manrope", sans-serif;
   position: absolute;
-  top: 1.7rem;
+  top: 1.45rem;
   right: 2rem;
   transform: rotate(90deg);
   color: #716e6e;

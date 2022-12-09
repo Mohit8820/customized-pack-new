@@ -49,6 +49,9 @@ $("#proceed-btn").click(function () {
     $("#proceed-modal").css("display", "inline-block");
     $("#proceed-modal").animate({ bottom: "0" }, 500);
     window.history.pushState({ id: 1 }, null, "index.html");
+  } else {
+    console.log($("#proceed-link"));
+    document.getElementById("proceed-link").click();
   }
 });
 document.getElementById("ok").onclick = function () {
@@ -91,25 +94,28 @@ var query = document.getElementsByClassName("query-asked");
 
 for (var i = 0; i < 4; i++) {
   query[i].addEventListener("click", function () {
-    // for (var j = 0; j < 4; j++) {
-    //   query[j].find(".query-ans").fadeOut();
-    // }
     $(".query-asked > .query-ans")
       .not($(this).children(".query-ans"))
       .fadeOut();
-    $(".query-asked > button")
-      .not($(this).children("button"))
-      .removeClass("button-border");
-    $(".query-asked > button>.minus")
-      .not($(this).children("button").children(".minus"))
+
+    $(".query-asked >.query-ques> button>.minus")
+      .not(
+        $(this).children(".query-ques").children("button").children(".minus")
+      )
       .hide();
-    $(".query-asked > button> .plus")
-      .not($(this).children("button").children(".plus"))
+    $(".query-asked >.query-ques> button> .plus")
+      .not($(this).children(".query-ques").children("button").children(".plus"))
       .show();
     $(".query-asked").not(this).removeClass("active-query", 500);
     // $(this).children(".query-asked button").toggleClass("button-border");
-    var min = $(this).children(".query-asked button").children(".minus");
-    var plu = $(this).children(".query-asked button").children(".plus");
+    var min = $(this)
+      .children(".query-ques")
+      .children("button")
+      .children(".minus");
+    var plu = $(this)
+      .children(".query-ques")
+      .children("button")
+      .children(".plus");
     min.toggle();
     plu.toggle();
     var divToSlide = jQuery(this).children(".query-ans");
