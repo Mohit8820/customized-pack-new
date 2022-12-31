@@ -118,7 +118,7 @@ for (var i = 0; i < 4; i++) {
       .children(".plus");
     min.toggle();
     plu.toggle();
-    var divToSlide = jQuery(this).children(".query-ans");
+    var divToSlide = $(this).children(".query-ans");
     divToSlide.fadeToggle();
     $(this).toggleClass("active-query", 500);
   });
@@ -160,6 +160,23 @@ if (nobtn) {
   }
 }
 
+var crslBtn = document.getElementsByClassName("crsl-btn");
+var slide = document.getElementsByClassName("slide");
+
+if (crslBtn) {
+  var i;
+  for (i = 0; i < nobtn.length; i++) {
+    crslBtn[i].addEventListener("click", function () {
+      $(this).addClass("active-crsl-btn", 500);
+      // console.log($(this).text());
+      $(".crsl-btn").not(this).removeClass("active-crsl-btn", 500);
+      var curr = $(this).text() - 1;
+      $(".slide").eq(curr).addClass("active-slide", 500);
+      $(".slide").not($(".slide").eq(curr)).removeClass("active-slide", 500);
+    });
+  }
+}
+
 var addcourse = document.getElementsByClassName("add-course");
 
 if (addcourse) {
@@ -187,3 +204,33 @@ if (addcourse) {
   }
 }
 console.log(courseCount);
+
+/**
+ * skills slider
+ */
+new Swiper(".skills-slider", {
+  speed: 1000,
+
+  // autoplay: {
+  //   delay: 0,
+  //   disableOnInteraction: false,
+  // },
+  slidesPerView: "auto",
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    type: "bullets",
+    clickable: true,
+  },
+  // Responsive breakpoints
+  breakpoints: {
+    // when window width is >= 320px
+    120: {
+      spaceBetween: 20,
+    },
+  },
+  loop: true,
+});
