@@ -1259,7 +1259,7 @@ sup {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  margin-top: 4rem;
+  margin-top: 10.5rem;
   padding-left: 3rem;
 }
 
@@ -1688,6 +1688,10 @@ footer a {
   .hero h1 svg {
     bottom: -0.7rem;
     transform: translateX(-50%) scale(0.72);
+  }
+
+  .hero {
+    margin-bottom: 10rem;
   }
   /*******************/
 
